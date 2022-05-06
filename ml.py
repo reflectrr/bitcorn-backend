@@ -22,5 +22,5 @@ def corn(address, data_array):
     Processed_data = data_processing(data_array, scaler)
     pred = model.predict(Processed_data)
     train_predict = scaler.inverse_transform(pred)
-    return train_predict[-1]
+    return train_predict[-1][0]
 price_for_tmr = corn("./lstm.h5", np.array(data["close"]))   
